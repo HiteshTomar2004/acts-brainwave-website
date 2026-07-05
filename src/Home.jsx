@@ -32,6 +32,7 @@ import instagram from "./assets/images/instagram.png";
 import linkedin from "./assets/images/linkedin.png";
 import gmail from "./assets/images/gmail.png";
 import linktree from "./assets/images/linktree.png";
+import { useState, useEffect } from 'react'
 import "./index.css"
 import timelineHeading from "../assets/timeline-heading.png";
 import elementImg from "../assets/element.png";
@@ -91,6 +92,44 @@ function EventRow({ event }) {
 
 
 export default function Home() {
+  const targetDate = new Date("August 21, 2026 00:00:00").getTime();
+  
+    const calculateTimeLeft = () => {
+      const now = new Date().getTime();
+      const difference = targetDate - now;
+  
+      if (difference <= 0) {
+        return {
+          days: "00",
+          hours: "00",
+          minutes: "00",
+          seconds: "00",
+        };
+      }
+  
+      return {
+        days: String(Math.floor(difference / (1000 * 60 * 60 * 24))).padStart(2, "0"),
+        hours: String(
+          Math.floor((difference / (1000 * 60 * 60)) % 24)
+        ).padStart(2, "0"),
+        minutes: String(
+          Math.floor((difference / (1000 * 60)) % 60)
+        ).padStart(2, "0"),
+        seconds: String(
+          Math.floor((difference / 1000) % 60)
+        ).padStart(2, "0"),
+      };
+    };
+  
+    const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+  
+    useEffect(() => {
+      const timer = setInterval(() => {
+        setTimeLeft(calculateTimeLeft());
+      }, 1000);
+  
+      return () => clearInterval(timer);
+    }, []);
   return (
     <main className="relative min-h-screen w-full overflow-x-hidden text-white">
 
@@ -147,24 +186,37 @@ export default function Home() {
         <div className='relative'>
                     <img className='absolute h-27 -right-9 lg:-right-1 lg:h-50 popup' src={wheel}/>
                     <img className='absolute h-20 left-31 lg:left-109 lg:h-38 popup' src={specialdeal}/>
-                    <img className='absolute h-13 lg:left-220 lg:h-28 lg:-top-9 popup' src={lightning}/>
+                    <img className='absolute h-13 lg:left-220 lg:h-28 lg:-top-9 hidden lg:block popup' src={lightning}/>
                     <img className='absolute h-32 top-214 left-37 lg:left-110 lg:top-175 lg:h-50 popup' src={spark2}/>
                     <img className='absolute h-17 top-28 left-18 lg:top-29 lg:left-52 lg:h-27 popup' src={spark}/>
                     <img className='absolute h-26 top-190 lg:top-126 lg:h-51 popup' src={check}/>
                     <img className='absolute h-22 top-179 -right-8 lg:top-129 lg:-right-1 lg:h-31 popup' src={qrcode}/>
-                    <img className='absolute h-30 top-36 rotate-6 -right-9 lg:top-63 lg:-rotate-44 lg:-right-20 lg:h-51 popup' src={triangle}/>
+                    <img className='absolute h-30 top-36 rotate-6 -right-9 lg:top-63 lg:-right-24 lg:h-60 popup' src={triangle}/>
                     <img className='absolute h-40 top-57 -left-4 lg:top-60 lg:h-57 lg:-left-8 popup' src={coin}/>
-                    <img className='absolute h-16 top-163 left-35 lg:top-160 lg:left-220 lg:h-22 popup' src={join}/>
+                    <a
+                    href="https://yourwebsite.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className='social-links'
+                    ><img className='absolute h-16 top-163 left-35 lg:top-160 lg:left-220 lg:h-22 popup' src={join}/></a>
                     <img className='absolute h-19 top-126 left-11 lg:top-123 lg:left-111 lg:h-39 popup' src={timerbg}/>
+                    <div className="absolute top-129 left-33 lg:top-130 lg:left-154 popup text-black font-mono font-bold text-4xl lg:text-[75px]">
+                      {timeLeft.days}:{timeLeft.hours}:{timeLeft.minutes}:{timeLeft.seconds}
+                    </div>
                     <img className='absolute h-9 top-121 left-40 lg:h-16 lg:top-117 lg:left-172 popup' src={date}/>
                     <img className='absolute -rotate-10 top-212 -right-8 h-29 lg:h-60 lg:-right-20 lg:top-165 popup' src={smile}/>
                     <img className='absolute top-70 left-90 h-22 lg:top-23 lg:left-298 lg:h-43 popup' src={crown}/>
                     <img className='absolute top-84 left-20 w-79 h-34 block lg:hidden fade-in' src={myLogo}/>
                     <img className='absolute top-39 left-114 h-72 hidden lg:block fade-in' src={biglogo}/>
-                    <img className='absolute -rotate-11 top-168 right-2 w-11 lg:top-112 lg:right-19 lg:w-16 popup' src={pose}/>
-                    <img className='absolute top-148 left-35 h-16 lg:top-160 lg:left-125 lg:h-22 popup' src={register}/>
+                    <img className='absolute -rotate-11 top-168 right-2 w-11 lg:top-112 lg:right-19 lg:w-20 popup' src={pose}/>
+                    <a
+                    href="https://yourwebsite.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className='social-links'
+                    ><img className='absolute top-148 left-35 h-16 lg:top-160 lg:left-125 lg:h-22 popup' src={register}/></a>
                     <img className='absolute h-36 -top-6 -left-27 lg:-left-30 lg:-top-7 lg:h-65' src={keepout}/>
-                    <img className='absolute top-201 -left-6 h-41 lg:h-73 lg:-left-11 lg:top-147 popup' src={spray}/>
+                    <img className='absolute top-198 -left-6 h-41 lg:h-72 lg:-left-2 lg:top-143 popup' src={spray}/>
                     <img className='absolute right-1 -top-12 h-34 lg:right-19 lg:-top-31 lg:h-75 popup' src={punk}/>
                     <img className='absolute max-w-118 h-13 top-230 block lg:hidden popup' src={caution}/>
                     <img className='absolute hidden lg:block lg:top-200 lg:w-450 lg:h-23 popup' src={caution}/>
