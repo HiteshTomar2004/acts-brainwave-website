@@ -1,0 +1,81 @@
+import googleLogo from "../assets/sponsorsandmentors/googleLogo.webp";
+
+export const sponsors = [
+        { id: 1, name: "Google", logo: googleLogo },
+        { id: 2, name: "Microsoft", logo: googleLogo },
+        { id: 3, name: "AWS", logo: googleLogo },
+        { id: 4, name: "MongoDB", logo: googleLogo },
+        { id: 5, name: "OpenAI", logo: googleLogo },
+        { id: 6, name: "Google", logo: googleLogo },
+        { id: 7, name: "Microsoft", logo: googleLogo },
+        { id: 8, name: "AWS", logo: googleLogo },
+        { id: 9, name: "MongoDB", logo: googleLogo },
+        { id: 10, name: "OpenAI", logo: googleLogo },
+    ];
+
+    export const people = [
+  {
+    id: 1,
+    name: "Aarav Mehta",
+    role: "Mentor",
+    description: "Software Engineer | Google",
+    image: "https://picsum.photos/300/400?random=1",
+    linkedin: "#",
+  },
+  {
+    id: 2,
+    name: "Priya Sharma",
+    role: "Judge",
+    description: "ML Engineer | Microsoft",
+    image: "https://picsum.photos/300/400?random=2",
+    linkedin: "#",
+  },
+  {
+    id: 3,
+    name: "Rohan Kapoor",
+    role: "Mentor",
+    description: "Product Engineer | Amazon",
+    image: "https://picsum.photos/300/400?random=3",
+    linkedin: "#",
+  },
+  {
+    id: 4,
+    name: "Neha Verma",
+    role: "Judge",
+    description: "Senior Developer | Adobe",
+    image: "https://picsum.photos/300/400?random=4",
+    linkedin: "#",
+  },
+  {
+    id: 5,
+    name: "Arjun Singh",
+    role: "Mentor",
+    description: "Cloud Architect | NVIDIA",
+    image: "https://picsum.photos/300/400?random=5",
+    linkedin: "#",
+  },
+  {
+    id: 6,
+    name: "Kavya Iyer",
+    role: "Judge",
+    description: "AI Researcher | Meta",
+    image: "https://picsum.photos/300/400?random=6",
+    linkedin: "#",
+  },
+  {
+    id: 7,
+    name: "Rahul Nair",
+    role: "Mentor",
+    description: "Backend Engineer | Netflix",
+    image: "https://picsum.photos/300/400?random=7",
+    linkedin: "#",
+  },
+  {
+    id: 8,
+    name: "Sneha Gupta",
+    role: "Judge",
+    description: "Security Engineer | Apple",
+    image: "https://picsum.photos/300/400?random=8",
+    linkedin: "#",
+  },
+];

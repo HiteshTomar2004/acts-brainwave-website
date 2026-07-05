@@ -1,4 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo:wght@400;500;600;700;800&display=swap");
 @import "tailwindcss";
+
 
 html {
   scroll-behavior: smooth;
@@ -12,4 +14,34 @@ body {
 
 *{
   box-sizing:border-box;
+}
+
+.font-exo {
+    font-family: "Exo", sans-serif;
+}
+
+.sponsors-track {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    width: max-content;
+
+    will-change: transform;
+    transform: translateZ(0);
+
+    animation: sponsors-scroll 40s linear infinite;
+}
+
+.sponsors-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes sponsors-scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
 }

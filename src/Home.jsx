@@ -1,63 +1,53 @@
 import Navbar from "./components/Navbar";
 import Dither from "./components/Dither";
-import timelineHeading from "../assets/timeline-heading.png";
-import elementImg from "../assets/element.png";
-import smileyImg from "../assets/smiley.png";
-import sprayImg from "../assets/spray.png";
-import prizeHeading from "../assets/prize-heading.png";
-import lineLeft from "../assets/line-left.png";
-import lineRight from "../assets/line-right.png";
-import prizeCards from "../assets/prize-cards.png";
-import registrationHeading from "../assets/registration-heading.png";
-import posterFrame from "../assets/poster-frame.png";
-import registerBtn from "../assets/register-btn.png";
-import iconPrize from "../assets/icon-prize.png";
-import iconOffline from "../assets/icon-offline.png";
-import iconClock from "../assets/icon-clock.png";
-import iconParticipants from "../assets/icon-participants.png";
-import decorStickers from "../assets/decor-stickers.jpeg";
-import card1 from "../assets/card1.png";
-import card2 from "../assets/card2.png";
-import card3 from "../assets/card3.png";
-import card4 from "../assets/card4.png";
-import line from "../assets/line.png";
-import actslogo from "../assets/actslogo.png";
-import keepOut from "../assets/keepout.png";
-   const events = [
-  { side: "left",  name: "Registrations Open",  date: "28 / 06 / 2026", info: "Sign up on the official portal" },
-  { side: "right", name: "Team Formation",       date: "10 / 07 / 2026", info: "Build your squad of 2–4 members" },
-  { side: "left",  name: "Problem Statements",   date: "20 / 07 / 2026", info: "Problem sets released to all teams" },
-  { side: "right", name: "Round 1 — Prelims",    date: "01 / 08 / 2026", info: "Online qualifying round" },
-  { side: "left",  name: "Round 2 — Semis",      date: "10 / 08 / 2026", info: "Top 50 teams advance" },
-  { side: "right", name: "Grand Finale",         date: "16 / 08 / 2026", info: "Live event · ₹20 Lakh prize pool" },
-];
+// import timelineHeading from "../assets/timeline-heading.png";
+// import elementImg from "../assets/element.png";
+// import smileyImg from "../assets/smiley.png";
+// import sprayImg from "../assets/spray.png";
+// import prizeHeading from "../assets/prize-heading.png";
+// import lineLeft from "../assets/line-left.png";
+// import lineRight from "./assets/line-right.png";
+// import prizeCards from "../assets/prize-cards.png";
+// import registrationHeading from "../assets/registration-heading.png";
+// import posterFrame from "../assets/poster-frame.png";
+// import registerBtn from "../assets/register-btn.png";
+// import iconPrize from "../assets/icon-prize.png";
+// import iconOffline from "../assets/icon-offline.png";
+// import iconClock from "../assets/icon-clock.png";
+// import iconParticipants from "../assets/icon-participants.png";
+// import decorStickers from "../assets/decor-stickers.jpeg";
+// import card1 from "../assets/card1.png";
+// import card2 from "../assets/card2.png";
+// import card3 from "../assets/card3.png";
+// import card4 from "../assets/card4.png";
+// import line from "../assets/line.png";
+// import actslogo from "../assets/actslogo.png";
+// import keepOut from "../assets/keepout.png";
+import aboutBrainwaveHeading from "./assets/about-brainwave-heading.png"
+import smileyAbout from "./assets/smiley-about.png"
+import lineRightAbout from "./assets/line-right-about.png";
+import lineLeftAbout from "./assets/line-left-about.png"
+import sponsorsHeading from "./assets/sponsorsHeading.png"
+import { sponsors } from "./data/data.js"
+import PersonCard from "./components/PersonCard.jsx";
+import { people } from "./data/data.js";
+import mentorsHeading from "./assets/mentorsHeading.png";
 
-// ===== Single event row =====
-function EventRow({ event }) {
-  const [lineVisible, setLineVisible] = useState(false);
-  const [textVisible, setTextVisible] = useState(false);
-  const rowRef = useRef(null);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setLineVisible(true);
-          setTimeout(() => setTextVisible(true), 900);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0, rootMargin: "0px 0px -30% 0px" }
-    );
-    if (rowRef.current) observer.observe(rowRef.current);
-    return () => observer.disconnect();
-  }, []);
-}
+//    const events = [
+//   { side: "left",  name: "Registrations Open",  date: "28 / 06 / 2026", info: "Sign up on the official portal" },
+//   { side: "right", name: "Team Formation",       date: "10 / 07 / 2026", info: "Build your squad of 2–4 members" },
+//   { side: "left",  name: "Problem Statements",   date: "20 / 07 / 2026", info: "Problem sets released to all teams" },
+//   { side: "right", name: "Round 1 — Prelims",    date: "01 / 08 / 2026", info: "Online qualifying round" },
+//   { side: "left",  name: "Round 2 — Semis",      date: "10 / 08 / 2026", info: "Top 50 teams advance" },
+//   { side: "right", name: "Grand Finale",         date: "16 / 08 / 2026", info: "Live event · ₹20 Lakh prize pool" },
+// ];
 
-  const isLeft = event.side === "left";
+
 
 
 export default function Home() {
+
   return (
     <main className="relative min-h-screen w-full overflow-x-hidden text-white">
 
@@ -68,7 +58,7 @@ export default function Home() {
       <div className="fixed inset-0 -z-50">
 
         <Dither
-          waveColor={[0.9372549019607843,0.9686274509803922,0.24705882352941178]}
+          waveColor={[0.9372549019607843, 0.9686274509803922, 0.24705882352941178]}
           disableAnimation={false}
           enableMouseInteraction
           mouseRadius={0.3}
@@ -127,13 +117,155 @@ export default function Home() {
       {/*                                                                */}
       {/* =============================================================== */}
 
-      <section id="about" className="relative w-full">
+      <section id="about" className="relative w-full mt-20">
 
-        {/* ================= ABOUT START ================= */}
+        <div
+          className="
+            relative
+            w-full
+            min-h-[470px]
+            lg:h-[48vh]
 
+            px-4
+            md:px-10
+            lg:px-12
+            xl:px-16
+          "
+        >
 
+          {/* Content */}
+          <div className="relative z-10 w-full">
 
-        {/* ================= ABOUT END =================== */}
+            {/* Heading */}
+            <div className="relative flex items-start">
+
+              <img
+                src={aboutBrainwaveHeading}
+                alt="About Brainwave"
+                className="
+                  w-[360px]
+                  sm:w-[360px]
+                  md:w-[520px]
+                  lg:w-[631px]
+
+                  h-auto
+                  shrink-0
+
+                  select-none
+                  pointer-events-none
+                "
+              />
+
+              {/* Desktop line */}
+              <img
+                src={lineRightAbout}
+                alt=""
+                className="
+                  hidden
+                  md:block
+
+                  ml-5
+                  mt-3
+
+                  w-[220px]
+                  lg:w-[300px]
+                  xl:w-[720px]
+
+                  h-auto
+                  object-contain
+                  shrink-0
+
+                  pointer-events-none
+                  select-none
+                "
+              />
+
+              {/* Smiley */}
+              <img
+                src={smileyAbout}
+                alt=""
+                className="
+                  absolute
+
+                  -top-6
+                  -right-14
+
+                  w-20
+                  sm:w-14
+
+                  md:w-20
+                  lg:w-28
+                  xl:w-36
+
+                  md:top-0
+                  md:-right-20
+
+                  lg:-top-8
+                  lg:-right-32
+
+                  pointer-events-none
+                  select-none
+                "
+              />
+
+            </div>
+
+            {/* Paragraph */}
+            <div className="mt-8">
+
+              <p
+                className="
+                  font-exo
+                  font-medium
+
+                  text-base
+                  sm:text-lg
+                  md:text-2xl
+                  lg:text-[32px]
+
+                  leading-relaxed
+                  lg:leading-[1.45]
+
+                  text-white
+                "
+              >
+                BrainWave 2026, organized by ACTS – EDC (Association for Computer
+                Technology Students – EDC), is New Delhi's biggest student-led
+                hackathon, bringing together students, innovators, developers,
+                designers, and entrepreneurs from across India and around the world.
+                Returning for its 2nd edition, BrainWave 2026 is an immersive
+                24-hour hackathon where participants collaborate, innovate, and
+                build impactful solutions to solve real-world challenges.
+
+              </p>
+              <br />
+              <br />
+              <p
+                className="
+                  font-exo
+                  font-bold
+
+                  text-base
+                  sm:text-lg
+                  md:text-2xl
+                  lg:text-[32px]
+
+                  leading-relaxed
+                  lg:leading-[1.45]
+
+                  text-white
+                "
+              >
+                Join us as we shape the future of innovation, push the boundaries
+                of technology, and empower the next generation of changemakers at
+                BrainWave 2026.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
 
       </section>
 
@@ -181,359 +313,6 @@ export default function Home() {
       {/*                                                                */}
       {/* =============================================================== */}
 
-      <section id="timeline" className="relative w-full">
-
-    <div ref={rowRef} style={{ position: "relative", display: "flex", alignItems: "center", minHeight: "140px" }}>
-
-      {/* Dot */}
-      <div style={{
-        position: "absolute", left: "50%", top: "50%",
-        transform: "translate(-50%, -50%)",
-        width: "14px", height: "14px", borderRadius: "50%",
-        backgroundColor: "#c8ff00",
-        boxShadow: "0 0 10px #c8ff00, 0 0 20px rgba(200,255,0,0.4)",
-        opacity: lineVisible ? 1 : 0,
-        transition: "opacity 0.4s ease",
-        zIndex: 20,
-      }} />
-
-      {/* Horizontal line */}
-      <div style={{
-        position: "absolute", top: "50%", transform: "translateY(-50%)",
-        height: "2px", backgroundColor: "#c8ff00",
-        boxShadow: "0 0 6px #c8ff00",
-        right: isLeft ? "calc(50% + 14px)" : "auto",
-        left: isLeft ? "auto" : "calc(50% + 14px)",
-        width: lineVisible ? "38%" : "0%",
-        transition: "width 0.8s ease-out",
-        zIndex: 10,
-      }} />
-
-      {/* Text above line */}
-      <div style={{
-        position: "absolute", top: "50%", transform: "translateY(-120%)",
-        right: isLeft ? "calc(50% + 20px)" : "auto",
-        left: isLeft ? "auto" : "calc(50% + 20px)",
-        textAlign: isLeft ? "right" : "left",
-        opacity: textVisible ? 1 : 0,
-        transition: "opacity 0.5s ease",
-        zIndex: 20,
-      }}>
-        <p style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "1.3rem", letterSpacing: "3px", color: "#ffffff", margin: 0 }}>
-          {event.name}
-        </p>
-        <p style={{ fontFamily: "'Share Tech Mono', monospace", fontSize: "0.75rem", color: "#c8ff00", letterSpacing: "2px", margin: "2px 0 0" }}>
-          {event.date}
-        </p>
-        <p style={{ fontSize: "0.7rem", color: "rgba(255,255,255,0.4)", margin: "3px 0 0" }}>
-          {event.info}
-        </p>
-      </div>
-
-    </div>
-  
-<section/>
-
-// ===== Main page =====
-export default function Timeline() {
-  return (
-    <div style={{
-      position: "relative",
-      width: "100%",
-      backgroundColor: "#060606",
-      minHeight: "100vh",
-      overflowX: "hidden",
-      paddingBottom: "120px",
-    }}>
-
-      {/* Google Fonts */}
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Share+Tech+Mono&display=swap" />
-
-      {/* ── BACKGROUND ELEMENTS ── */}
-
-      {/* White brush/slash — right side, middle of page */}
-      <img src={elementImg} alt="" style={{
-        position: "absolute",
-        top: "20%",
-        right: "-30px",        /* change right value to move left or right */
-        width: "280px",        /* change to resize */
-        opacity: 0.55,         /* change 0 to 1 for full brightness */
-        pointerEvents: "none",
-        userSelect: "none",
-        zIndex: 1,
-      }} />
-
-      {/* Smiley — bottom left, half peeking out */}
-      <img src={smileyImg} alt="" style={{
-        position: "absolute",
-        bottom: "60px",        /* change to move up or down */
-        left: "-35px",         /* negative = peek from edge */
-        width: "140px",        /* change to resize */
-        pointerEvents: "none",
-        userSelect: "none",
-        zIndex: 1,
-      }} />
-
-      {/* Spray can — bottom center-right */}
-      <img src={sprayImg} alt="" style={{
-        position: "absolute",
-        bottom: "10px",        /* change to move up or down */
-        right: "250px",         /* change to move left or right */
-        width: "130px",        /* change to resize */
-        pointerEvents: "none",
-        userSelect: "none",
-        zIndex: 1,
-      }} />
-
-      {/* ── HEADING ── */}
-      <div style={{ textAlign: "center", paddingTop: "60px", paddingBottom: "40px", position: "relative", zIndex: 2 }}>
-        <img
-          src={timelineHeading}
-          alt="TIMELINE"
-          style={{ width: "min(700px, 90vw)", margin: "0 auto", display: "block" }}
-        />
-      </div>
-
-      {/* ── VERTICAL SPINE LINE ── */}
-      <div style={{
-        position: "absolute",
-        left: "50%",
-        transform: "translateX(-50%)",
-        top: "160px",
-        bottom: "100px",
-        width: "2px",
-        backgroundColor: "rgba(200,255,0,0.3)",
-        zIndex: 2,
-      }} />
-
-      {/* ── EVENT ROWS ── */}
-      <div style={{
-        position: "relative",
-        maxWidth: "900px",
-        margin: "0 auto",
-        padding: "0 20px",
-        zIndex: 3,             /* above background images */
-      }}>
-        {events.map((event, index) => (
-          <EventRow key={index} event={event} />
-        ))}
-      </div>
-
-    </div>
-  );
-}
-
-      </section>
-
-
-
-      {/* =============================================================== */}
-      {/*                                                                */}
-      {/*                        PRIZE POOL                             */}
-      {/*                                                                */}
-      {/* =============================================================== */}
-
-      <section id="prizes" className="relative w-full">
-
-       export default function Prize() {
-  return (
-    <div style={{
-      backgroundColor: "#060606",
-  width: "100%",
-minHeight: "100vh",
-backgroundColor: "#060606",
-display: "flex",
-flexDirection: "column",
-alignItems: "center",
-justifyContent: "center",
-padding: "40px 20px",
-boxSizing: "border-box",
-overflow: "hidden",
-    }}>
-
-      {/* ── HEADING ROW: line + PRIZE POOL + line ── */}
-      <div style={{
-        display: "flex",
-        alignItems: "center",
-        width: "100%",
-        maxWidth: "1200px",
-        padding: "0",
-        gap: "12px",
-        boxSizing: "border-box",
-        marginBottom: "40px",
-      }}>
-        {/* Left line */}
-        <img src={lineLeft} alt="" style={{
-          flex: 1, minWidth: 0, height: "12px", objectFit: "fill",
-        }} />
-
-        {/* Heading */}
-        <img src={prizeHeading} alt="PRIZE POOL" style={{
-          width: "clamp(180px, 28vw, 340px)",
-          flexShrink: 0,
-          height: "auto",
-        }} />
-
-        {/* Right line */}
-        <img src={lineRight} alt="" style={{
-          flex: 1, minWidth: 0, height: "12px", objectFit: "fill",
-        }} />
-      </div>
-
-      {/* ── PRIZE CARDS ── */}
-      <div style={{
-        width: "100%",
-        maxWidth: "1200px",
-        display: "flex",
-        justifyContent: "center",
-        padding: "0 ",
-        boxSizing: "border-box",
-      }}>
-        <img src={prizeCards} alt="Prize Cards" style={{
-          width: "100%",
-          maxWidth:"950px",
-          height: "auto",
-          display:"block",
-        }} />
-      </div>
-
-    </div>
-  );
-}
-
-
-      </section>
-
-
-
-      {/* =============================================================== */}
-      {/*                                                                */}
-      {/*                       REGISTRATION                            */}
-      {/*                                                                */}
-      {/* =============================================================== */}
-
-      <section id="register" className="relative w-full">
-
-        const REGISTER_LINK = "https://www.ipu.ac.in/";
-
-function Registration() {
-  return (
-    <div className="relative min-h-screen w-full bg-black overflow-hidden">
-      <img
-        src={decorStickers}
-        alt=""
-        className="absolute bottom-0 left-0 w-full object-cover pointer-events-none select-none"
-      />
-
-      
-      <div className="relative z-10 flex justify-center pt-6">
-        <img
-          src={registrationHeading}
-          alt="Registration"
-          className="w-[700px] max-w-[90%]"
-        />
-      </div>
-
-    
-      <div className="relative z-10 flex items-center justify-center gap-10 mt-28">
-
-                       /*LEFT*/
-        <div className="flex flex-col items-center gap-6">
-
-  {/* Register Button */}
-  <a href={REGISTER_LINK} target="_blank" rel="noreferrer">
-    <img
-      src={registerBtn}
-      alt="Register"
-      className="w-[300px] hover:scale-110 transition"
-    />
-  </a>
-
-  {/* Poster */}
-  <div
-    className="relative w-[320px] h-[320px] bg-center bg-cover flex items-center justify-center"
-    style={{ backgroundImage: `url(${posterFrame})` }}
-  >
-    <img
-      src={actslogo}
-      alt="Poster"
-      className="w-[240px] h-[240px] object-contain"
-    />
-  </div>
-
-</div>
-
-                                             /* LINE */
-        <img
-          src={line}
-          alt="line"
-          className="h-[420px] w-auto"
-        />
-
-                                                        /* RIGHT SIDE */
-        <div className="grid grid-cols-2 gap-4">
-
-          <div
-            className="relative w-[200px] h-[180px] bg-cover bg-center"
-            style={{ backgroundImage: `url(${card1})` }}
-          >
-            <img
-              src={iconPrize}
-              alt=""
-              className="absolute -top-10 left-1/2 -translate-x-1/2 w-28"
-            />
-          </div>
-
-          <div
-            className="relative w-[200px] h-[180px] bg-cover bg-center"
-            style={{ backgroundImage: `url(${card2})` }}
-          >
-            <img
-              src={iconOffline}
-              alt=""
-              className="absolute -top-8 left-1/2 -translate-x-1/2 w-28"
-            />
-          </div>
-
-          <div
-            className="relative w-[200px] h-[180px] bg-cover bg-center"
-            style={{ backgroundImage: `url(${card3})` }}
-          >
-            <img
-              src={iconClock}
-              alt=""
-              className="absolute -top-8 left-1/2 -translate-x-1/2 w-28"
-            />
-          </div>
-
-          <div
-            className="relative w-[200px] h-[180px] bg-cover bg-center"
-            style={{ backgroundImage: `url(${card4})` }}
-          >
-            <img
-              src={iconParticipants}
-              alt=""
-              className="absolute -top-8 left-1/2 -translate-x-1/2 w-28"
-            />
-          </div>
-        </div>
-      </div>
-
-      {/* Bottom Keep Out Strip */}
-<div className="absolute bottom-0 left-0 w-full">
-  <img
-    src={keepOut}
-    alt="Keep Out"
-    className="w-full object-cover"
-  />
-</div>
-    </div>
-  );
-}
-
-export default Registration;
-
-      </section>
 
 
 
@@ -543,13 +322,125 @@ export default Registration;
       {/*                                                                */}
       {/* =============================================================== */}
 
-      <section id="sponsors" className="relative w-full">
+      <section id="sponsors" className="relative w-full py-24 overflow-hidden">
 
-        {/* =============== SPONSORS START ============== */}
+        <div className="w-full px-4 md:px-8 lg:px-12">
 
+          {/* Heading */}
+          <div className="flex items-center gap-5 mb-16">
 
+            <img
+              src={lineLeftAbout}
+              alt=""
+              className="
+              hidden
+              md:block
 
-        {/* ================ SPONSORS END =============== */}
+              flex-1
+
+              h-3
+              object-fill
+              min-w-0
+            "
+            />
+
+            <img
+              src={sponsorsHeading}
+              alt="Sponsors"
+              className="
+              w-[300px]
+              md:w-[420px]
+              lg:w-[520px]
+
+              h-auto
+              shrink-0
+            "
+            />
+
+            <img
+              src={lineRightAbout}
+              alt=""
+              className="
+              hidden
+              md:block
+
+              flex-1
+
+              h-3
+              object-fill
+              min-w-0
+            "
+            />
+
+          </div>
+
+          {/* Carousel */}
+
+          <div
+            className="
+              overflow-hidden
+              rounded-3xl
+
+              py-8
+
+              relative
+              isolate
+            "
+          >
+            <div className="sponsors-track mt-5">
+
+              {[...sponsors, ...sponsors].map((sponsor, index) => (
+
+                <div
+                  key={`${sponsor.id}-${index}`}
+                  className="
+                    flex
+                    items-center
+                    justify-center
+
+                    shrink-0
+
+                    w-[170px]
+                    h-[170px]
+
+                    md:w-[210px]
+                    md:h-[210px]
+
+                    lg:w-[250px]
+                    lg:h-[250px]
+                  "
+                >
+
+                  <img
+                    src={sponsor.logo}
+                    alt={sponsor.name}
+                    loading="lazy"
+                    draggable={false}
+                    className="
+                      w-[120px]
+                      h-[120px]
+
+                      md:w-[150px]
+                      md:h-[150px]
+
+                      lg:w-[180px]
+                      lg:h-[180px]
+
+                      object-contain
+
+                      select-none
+                      pointer-events-none
+                    "
+                  />
+
+                </div>
+
+              ))}
+
+            </div>
+          </div>
+
+        </div>
 
       </section>
 
@@ -564,8 +455,58 @@ export default Registration;
       <section id="mentors" className="relative w-full">
 
         {/* =============== MENTORS START =============== */}
+          
+              <div className="w-full px-4 md:px-8 lg:px-12 py-24">
 
+                {/* Heading */}
 
+                <div className="flex items-center gap-5 mb-16">
+
+                  <img
+                    src={lineLeftAbout}
+                    alt=""
+                    className="
+                      hidden
+                      md:block
+
+                      flex-1
+
+                      h-3
+                      object-fill
+                    "
+                  />
+
+                  <img
+                    src={mentorsHeading}
+                    alt="Mentors"
+                    className="
+                      w-[320px]
+                      md:w-[450px]
+                      lg:w-[560px]
+
+                      h-auto
+                    "
+                  />
+
+                  <img
+                    src={lineRightAbout}
+                    alt=""
+                    className="
+                      hidden
+                      md:block
+
+                      flex-1
+
+                      h-3
+                      object-fill
+                    "
+                  />
+
+                </div>
+
+                
+
+              </div>
 
         {/* ================ MENTORS END ================ */}
 
@@ -607,6 +548,6 @@ export default Registration;
 
       </footer>
 
-    </main>
+    </main >
   );
 }
