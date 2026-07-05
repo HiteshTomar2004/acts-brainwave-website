@@ -32,10 +32,49 @@ import instagram from "./assets/images/instagram.png";
 import linkedin from "./assets/images/linkedin.png";
 import gmail from "./assets/images/gmail.png";
 import linktree from "./assets/images/linktree.png";
+import { useState, useEffect } from 'react'
 import "./index.css"
 
 
 export default function Home() {
+  const targetDate = new Date("August 21, 2026 00:00:00").getTime();
+  
+    const calculateTimeLeft = () => {
+      const now = new Date().getTime();
+      const difference = targetDate - now;
+  
+      if (difference <= 0) {
+        return {
+          days: "00",
+          hours: "00",
+          minutes: "00",
+          seconds: "00",
+        };
+      }
+  
+      return {
+        days: String(Math.floor(difference / (1000 * 60 * 60 * 24))).padStart(2, "0"),
+        hours: String(
+          Math.floor((difference / (1000 * 60 * 60)) % 24)
+        ).padStart(2, "0"),
+        minutes: String(
+          Math.floor((difference / (1000 * 60)) % 60)
+        ).padStart(2, "0"),
+        seconds: String(
+          Math.floor((difference / 1000) % 60)
+        ).padStart(2, "0"),
+      };
+    };
+  
+    const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+  
+    useEffect(() => {
+      const timer = setInterval(() => {
+        setTimeLeft(calculateTimeLeft());
+      }, 1000);
+  
+      return () => clearInterval(timer);
+    }, []);
   return (
     <main className="relative min-h-screen w-full overflow-x-hidden text-white">
 
