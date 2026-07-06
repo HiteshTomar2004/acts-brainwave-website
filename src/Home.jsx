@@ -59,12 +59,12 @@ import linktree from "./assets/images/linktree.png";
 import "./index.css";
 
 const events = [
-  { side: "left",  name: "Registrations Open",  date: "28 / 06 / 2026", info: "Sign up on the official portal" },
-  { side: "right", name: "Team Formation",       date: "10 / 07 / 2026", info: "Build your squad of 2–4 members" },
-  { side: "left",  name: "Problem Statements",   date: "20 / 07 / 2026", info: "Problem sets released to all teams" },
-  { side: "right", name: "Round 1 — Prelims",    date: "01 / 08 / 2026", info: "Online qualifying round" },
-  { side: "left",  name: "Round 2 — Semis",      date: "10 / 08 / 2026", info: "Top 50 teams advance" },
-  { side: "right", name: "Grand Finale",         date: "16 / 08 / 2026", info: "Live event · ₹20 Lakh prize pool" },
+  { side: "left", name: "Registrations Open", date: "28 / 06 / 2026", info: "Sign up on the official portal" },
+  { side: "right", name: "Team Formation", date: "10 / 07 / 2026", info: "Build your squad of 2–4 members" },
+  { side: "left", name: "Problem Statements", date: "20 / 07 / 2026", info: "Problem sets released to all teams" },
+  { side: "right", name: "Round 1 — Prelims", date: "01 / 08 / 2026", info: "Online qualifying round" },
+  { side: "left", name: "Round 2 — Semis", date: "10 / 08 / 2026", info: "Top 50 teams advance" },
+  { side: "right", name: "Grand Finale", date: "16 / 08 / 2026", info: "Live event · ₹20 Lakh prize pool" },
 ];
 
 // ===== Single event row =====
@@ -451,47 +451,148 @@ export default function Home() {
       {/* 5. Keep the design responsive.                                */}
       {/* =============================================================== */}
 
-      <section id="hero" className="relative w-full">
-        <div className='relative h-[1550px] lg:h-[950px]'>
-          <img className='absolute h-27 -right-9 lg:-right-1 lg:h-50 popup' src={wheel} />
-          <img className='absolute h-20 left-31 lg:left-109 lg:h-38 popup' src={specialdeal} />
-          <img className='absolute h-13 lg:left-220 lg:h-28 lg:-top-9 hidden lg:block popup' src={lightning} />
-          <img className='absolute h-32 top-214 left-37 lg:left-110 lg:top-175 lg:h-50 popup' src={spark2} />
-          <img className='absolute h-17 top-28 left-18 lg:top-29 lg:left-52 lg:h-27 popup' src={spark} />
-          <img className='absolute h-26 top-190 lg:top-126 lg:h-51 popup' src={check} />
-          <img className='absolute h-22 top-179 -right-8 lg:top-129 lg:-right-1 lg:h-31 popup' src={qrcode} />
-          <img className='absolute h-30 top-36 rotate-6 -right-9 lg:top-63 lg:-right-24 lg:h-60 popup' src={triangle} />
-          <img className='absolute h-40 top-57 -left-4 lg:top-60 lg:h-57 lg:-left-8 popup' src={coin} />
-          <a
-            href="https://yourwebsite.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className='social-links'
-          ><img className='absolute h-16 top-163 left-35 lg:top-160 lg:left-220 lg:h-22 popup' src={join} /></a>
-          <img className='absolute h-19 top-126 left-11 lg:top-123 lg:left-111 lg:h-39 popup' src={timerbg} />
-          <div className="absolute top-129 left-33 lg:top-130 lg:left-154 popup text-black font-mono font-bold text-4xl lg:text-[75px]">
+      
+
+      <section id="hero" className="relative w-full overflow-hidden">
+  <div className="relative w-full aspect-[412/915] lg:aspect-[1440/900]">
+
+    {/* ================= Decorative Stickers ================= */}
+
+    <img className="absolute h-[26.21vw] -right-[8.74vw] lg:right-[-0.28vw] lg:h-[13.89vw] popup" src={wheel} />
+    <img className="absolute h-[19.42vw] left-[30.1vw] lg:left-[20.72vw] lg:h-[8.56vw] popup" src={specialdeal} />
+    <img className="absolute h-[3.61vw] lg:left-[61.11vw] lg:h-[7.78vw] lg:top-[-1.11vw] hidden lg:block popup" src={lightning} />
+
+    {/* Adjusted spark2 to stay in its design spot */}
+    <img className="absolute h-[31.07vw] top-[200.97vw] left-[35.92vw] lg:left-[30.56vw] lg:top-[48.61vw] lg:h-[13.89vw] popup" src={spark2} />
+
+    {/* FIXED: Brought the missing white spark sticker back to its top-left quadrant position */}
+    <img className="absolute h-[16.5vw] top-[27.18vw] left-[4.85vw] lg:top-[18.06vw] lg:left-[10.44vw] lg:h-[7.5vw] popup" src={spark} />
+
+    <img className="absolute h-[25.24vw] top-[170vw] lg:top-[29.44vw] lg:h-[14.17vw] popup" src={check} />
+
+    <img className="absolute h-[21.36vw] top-[176.7vw] -right-[7.77vw] lg:top-[27.5vw] lg:right-[-0.28vw] lg:h-[8.61vw] popup" src={qrcode} />
+
+    <img className="absolute h-[29.13vw] top-[34.95vw] rotate-6 -right-[8.74vw] lg:top-[9.17vw] lg:right-[-6.67vw] lg:h-[16.67vw] popup" src={triangle} />
+
+    <img className="absolute h-[38.83vw] top-[55.34vw] -left-[3.88vw] lg:top-[16.67vw] lg:h-[15.83vw] lg:left-[-2.22vw] popup" src={coin} />
+
+    <img className="absolute -rotate-10 top-[199.03vw] -right-[7.77vw] h-[28.16vw] lg:h-[16.67vw] lg:right-[-5.56vw] lg:top-[34.72vw] popup" src={smile} />
+
+    {/* FIXED: Repositioned Crown to match Figma (Higher up, further right, proper scaling) */}
+    <img className="absolute top-[19.42vw] left-[77.67vw] h-[21.36vw] lg:top-[13vw] lg:left-[78%] lg:h-[11vw] popup" src={crown} />
+
+    <img className="absolute -rotate-11 top-[166.02vw] right-[1.94vw] w-[10.68vw] lg:top-[22.78vw] lg:right-[5.28vw] lg:w-[5.56vw] popup" src={pose} />
+
+    <img className="absolute h-[34.95vw] top-[-5.83vw] -left-[26.21vw] lg:left-[-8.33vw] lg:top-[-1.94vw] lg:h-[18.06vw]" src={keepout} />
+
+    <img className="absolute top-[185.15vw] -left-[5.83vw] h-[39.81vw] lg:h-[20vw] lg:-left-[0.56vw] lg:top-[34.17vw] popup" src={spray} />
+
+    <img className="absolute right-[0.97vw] -top-[11.65vw] h-[33.01vw] lg:right-[5.28vw] lg:-top-[8.61vw] lg:h-[20.83vw] popup" src={punk} />
+
+    {/* Mobile caution */}
+    <img
+      className="absolute block lg:hidden max-w-[118vw] h-[12.62vw] top-[212vw] popup"
+      src={caution}
+      alt=""
+    />
+
+    {/* Desktop caution */}
+    <img
+      className="absolute hidden lg:block left-1/2 -translate-x-1/2 top-[43.2vw] w-full max-w-[1800px] h-auto popup"
+      src={caution}
+      alt=""
+    />
+
+    <img
+      className="absolute w-[12.62vw] left-[25.24vw] top-[171.26vw] lg:top-[31.67vw] lg:left-[16.11vw] lg:w-[5.28vw] popup"
+      src={tag}
+      alt=""
+    />
+
+    {/* ================= CENTER CONTENT ================= */}
+
+    <div className="absolute inset-0 flex justify-center mt-[75.42vw] lg:mt-[7.5vw]">
+
+      <div className="flex flex-col items-center gap-[3.5vw] lg:gap-[0.2vw]">
+
+        {/* Logo */}
+        <img
+          src={myLogo}
+          className="block lg:hidden w-[58.25vw] fade-in"
+          alt=""
+        />
+        <img
+          src={biglogo}
+          className="hidden lg:block w-[50vw] fade-in"
+          alt=""
+        />
+
+        {/* Date */}
+        <img
+          src={date}
+          className="w-[35.19vw] lg:w-[17.36vw]"
+          alt=""
+        />
+
+        {/* Timer */}
+        <div className="relative">
+          <img
+            src={timerbg}
+            className="w-[67.96vw] lg:w-[29.44vw]"
+            alt=""
+          />
+          <div
+            className="
+          absolute inset-0
+          flex items-center justify-center
+          text-black
+          font-mono
+          font-bold
+          text-[6.31vw]
+          lg:text-[3vw]
+        "
+          >
             {timeLeft.days}:{timeLeft.hours}:{timeLeft.minutes}:{timeLeft.seconds}
           </div>
-          <img className='absolute h-9 top-121 left-40 lg:h-16 lg:top-117 lg:left-172 popup' src={date} />
-          <img className='absolute -rotate-10 top-212 -right-8 h-29 lg:h-60 lg:-right-20 lg:top-165 popup' src={smile} />
-          <img className='absolute top-70 left-90 h-22 lg:top-23 lg:left-298 lg:h-43 popup' src={crown} />
-          <img className='absolute top-84 left-20 w-79 h-34 block lg:hidden fade-in' src={myLogo} />
-          <img className='absolute top-39 left-114 h-72 hidden lg:block fade-in' src={biglogo} />
-          <img className='absolute -rotate-11 top-168 right-2 w-11 lg:top-112 lg:right-19 lg:w-20 popup' src={pose} />
+        </div>
+
+        {/* Buttons */}
+        <div className="flex flex-col lg:flex-row gap-[3vw] lg:gap-[1.8vw]">
+
           <a
             href="https://yourwebsite.com"
             target="_blank"
             rel="noopener noreferrer"
-            className='social-links'
-          ><img className='absolute top-148 left-35 h-16 lg:top-160 lg:left-125 lg:h-22 popup' src={register} /></a>
-          <img className='absolute h-36 -top-6 -left-27 lg:-left-30 lg:-top-7 lg:h-65' src={keepout} />
-          <img className='absolute top-198 -left-6 h-41 lg:h-72 lg:-left-2 lg:top-143 popup' src={spray} />
-          <img className='absolute right-1 -top-12 h-34 lg:right-19 lg:-top-31 lg:h-75 popup' src={punk} />
-          <img className='absolute max-w-118 h-13 top-230 block lg:hidden popup' src={caution} />
-          <img className='absolute hidden lg:block lg:top-200 lg:w-450 lg:h-23 popup' src={caution} />
-          <img className='absolute w-13 left-6 top-154 lg:top-114 lg:left-58 lg:w-19 popup' src={tag} />
+            className="social-links"
+          >
+            <img
+              src={register}
+              className="h-[11.65vw] lg:h-[5.56vw] popup"
+              alt=""
+            />
+          </a>
+
+          <a
+            href="https://yourwebsite.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-links"
+          >
+            <img
+              src={join}
+              className="h-[11.65vw] lg:h-[5.56vw] popup"
+              alt=""
+            />
+          </a>
+
         </div>
-      </section>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
       {/* =============================================================== */}
       {/*                      ABOUT BRAINWAVE                           */}
@@ -525,7 +626,7 @@ export default function Home() {
 
       {/* TIMELINE SECTION */}
       <div className='relative min-h-screen'>
-      <TimelineSection />
+        <TimelineSection />
       </div>
 
       {/* PRIZE POOL SECTION */}

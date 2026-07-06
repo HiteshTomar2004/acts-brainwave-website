@@ -4,7 +4,7 @@ import DitherBackground from "./components/DitherBackground";
 function App() {
   return (
     <>
-      <DitherBackground color="#edef23" density={0.2}/>
+      <DitherBackground color="#BDBDBD" density={0.25}/>
       <Home />
     </>);
 }

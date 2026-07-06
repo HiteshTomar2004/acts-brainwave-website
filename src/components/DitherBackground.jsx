@@ -71,7 +71,7 @@ const fragmentShader = /* glsl */ `
     // Slowly drifting organic blobs, kept as a smooth gradient (0..1),
     // not binarized, so the dither step below can render soft density
     // transitions instead of flat filled regions.
-    float n = fbm(uv * 5.0 + uTime * 0.35);
+    float n = fbm(uv * 5.5 + uTime * 0.25);
     float mask = smoothstep(0.15, 0.85, n);
 
     // Ripples from clicks
