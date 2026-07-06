@@ -571,7 +571,7 @@ export default function Home() {
               <div className="flex flex-col lg:flex-row gap-[3vw] lg:gap-[1.8vw]">
 
                 <a
-                  href="https://yourwebsite.com"
+                  href="https://unstop.com/o/PxlVshT?utm_medium=Share&utm_source=aditysin8668&utm_campaign=Online_coding_challenge"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="social-links"
@@ -584,7 +584,7 @@ export default function Home() {
                 </a>
 
                 <a
-                  href="https://yourwebsite.com"
+                  href="https://chat.whatsapp.com/KO79BBDUoqH7RqcepXjB1J?s=cl&p=a&ilr=2"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="social-links"
