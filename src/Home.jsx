@@ -68,6 +68,8 @@ import mentorsHeading from "./assets/mentorsHeading.png";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css/core";
 import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
+import Tracks from "./components/Tracks.jsx";
+
 
 const events = [
   { side: "left", name: "Registrations Open", date: "28 / 06 / 2026", info: "Sign up on the official portal" },
@@ -763,6 +765,8 @@ export default function Home() {
       <div className='relative min-h-screen'>
         <TimelineSection />
       </div>
+
+      <Tracks/>
 
       {/* PRIZE POOL SECTION */}
       <PrizeSection />

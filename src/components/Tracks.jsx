@@ -21,7 +21,7 @@ const trackList = [
   { img: track8, name: "Design & UI/UX" },
 ];
 
-export default function TracksSection() {
+export default function Tracks() {
   const [visible, setVisible] = useState(false);
   const sectionRef = useRef(null);
 
@@ -40,7 +40,7 @@ export default function TracksSection() {
   }, []);
 
   return (
-    <section id="tracks" ref={sectionRef} className="relative w-full bg-[#060606] min-h-screen overflow-hidden py-20 px-5 pb-[120px]">
+    <section id="tracks" ref={sectionRef} className="relative w-full min-h-screen overflow-hidden py-20 px-5 pb-[120px]">
       {/* Heading - matches timeline/registration heading sizing */}
       <div className="text-center mb-12 md:mb-16 relative z-10">
         <img
