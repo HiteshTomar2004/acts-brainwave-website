@@ -608,7 +608,7 @@ export default function Home() {
       {/* =============================================================== */}
       {/*                      ABOUT BRAINWAVE                           */}
       {/* =============================================================== */}
-      <section id="about" className="relative w-full mt-20">
+      <section id="about" className="relative w-full pt-20 overflow-x-hidden">
 
         <div
           className="
@@ -634,10 +634,12 @@ export default function Home() {
                 src={aboutBrainwaveHeading}
                 alt="About Brainwave"
                 className="
-                  w-[360px]
-                  sm:w-[360px]
-                  md:w-[520px]
-                  lg:w-[631px]
+                  w-full
+                  max-w-[340px]
+
+                  sm:max-w-[360px]
+                  md:max-w-[520px]
+                  lg:max-w-[631px]
 
                   h-auto
                   shrink-0
