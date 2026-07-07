@@ -1173,7 +1173,7 @@ export default function Home() {
                 <input type="radio" name="accordion" id="second" />
                 <label htmlFor="second">What is the Code of Conduct for BrainWave?</label>
                 <div className="content">
-                  <p>All participants are expected to maintain a respectful, inclusive, and professional environment throughout the event. Any form of misconduct, discrimination, harassment, plagiarism, or violation of the event guidelines may result in disqualification. Participants are encouraged to read the complete Code of Conduct before the event. <a href="https://www.actsedc.in/" target="_blank" rel="noopener noreferrer">*Read the full Code of Conduct here:*</a></p>
+                  <p>All participants are expected to maintain a respectful, inclusive, and professional environment throughout the event. Any form of misconduct, discrimination, harassment, plagiarism, or violation of the event guidelines may result in disqualification. Participants are encouraged to read the complete Code of Conduct before the event. <a href="https://docs.google.com/document/d/1OP3FN9Tqv-fwOR1cGzRP5MLUuoGF-EXNmiMAm4ZF3uY/edit?usp=sharing" target="_blank" rel="noopener noreferrer">*Read the full Code of Conduct here:*</a></p>
                 </div>
               </li>
               <li className="rounded-2xl overflow-hidden ">
