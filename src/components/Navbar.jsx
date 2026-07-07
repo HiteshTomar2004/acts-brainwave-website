@@ -30,7 +30,7 @@ function DotGrid() {
 const NAV_ITEMS = [
   { label: "About", href: "#about", id: "about" },
   { label: "Timeline", href: "#timeline", id: "timeline" },
-  { label: "Prizes", href: "#prizes", id: "prizes" },
+  // { label: "Prizes", href: "#prizes", id: "prizes" },
   { label: "Register", href: "#register", id: "register" },
   { label: "Sponsors and Mentors", href: "#sponsors", id: "sponsors" },
   { label: "FAQs", href: "#faq", id: "faq" },

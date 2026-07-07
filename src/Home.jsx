@@ -292,7 +292,7 @@ function PrizeSection() {
   
 
 function RegistrationSection() {
-  const REGISTER_LINK = "https://www.ipu.ac.in/";
+  const REGISTER_LINK = "https://unstop.com/hackathons/brainwave-2026-guru-gobind-singh-indraprastha-university-ggsipu-delhi-1711474";
 
   return (
     <>
@@ -880,7 +880,7 @@ export default function Home() {
 
 
       {/* PRIZE POOL SECTION */}
-      <PrizeSection />
+      {/* <PrizeSection /> */}
 
       {/* REGISTRATION SECTION */}
       <RegistrationSection />
@@ -1173,7 +1173,7 @@ export default function Home() {
                 <input type="radio" name="accordion" id="second" />
                 <label htmlFor="second">What is the Code of Conduct for BrainWave?</label>
                 <div className="content">
-                  <p>All participants are expected to maintain a respectful, inclusive, and professional environment throughout the event. Any form of misconduct, discrimination, harassment, plagiarism, or violation of the event guidelines may result in disqualification. Participants are encouraged to read the complete Code of Conduct before the event. <a href="https://www.actsedc.in/" target="_blank" rel="noopener noreferrer">*Read the full Code of Conduct here:*</a></p>
+                  <p>All participants are expected to maintain a respectful, inclusive, and professional environment throughout the event. Any form of misconduct, discrimination, harassment, plagiarism, or violation of the event guidelines may result in disqualification. Participants are encouraged to read the complete Code of Conduct before the event. <a href="https://docs.google.com/document/d/1OP3FN9Tqv-fwOR1cGzRP5MLUuoGF-EXNmiMAm4ZF3uY/edit?usp=sharing" target="_blank" rel="noopener noreferrer">*Read the full Code of Conduct here:*</a></p>
                 </div>
               </li>
               <li className="rounded-2xl overflow-hidden ">
@@ -1209,7 +1209,7 @@ export default function Home() {
           <img className='absolute h-[13vw] top-[205vw] left-[2vw] lg:top-[54.56vw] lg:left-[2.22vw] lg:h-[6.50vw]' src={MyLogo} alt='logo'/>
           <img className='absolute h-[14vw] top-[205vw] lg:h-[5.10svw] lg:top-[55.38vw] -right-[0.5vw]' src={decor} alt='decor'/>
           <div className="social-links absolute top-[207.55vw] right-[2vw] lg:top-[56.27svw] lg:right-[1.93vw] lg:w-[14.91vw] lg:h-[3.55vw] flex flex-row justify-evenly gap-1 items-center bg-black rounded-xl">
-            <a href="https://www.actsedc.in/" target="_blank" rel="noopener noreferrer">
+            <a href="https://linktr.ee/ACTS_EDC" target="_blank" rel="noopener noreferrer">
               <img className='w-[8vw] lg:w-[3.3vw] rounded-xl' src={linktree} alt="linktree" />
             </a>
             <a href="https://www.instagram.com/acts_edc/" target="_blank" rel="noopener noreferrer">
