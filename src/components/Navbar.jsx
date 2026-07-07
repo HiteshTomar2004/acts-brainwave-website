@@ -32,7 +32,7 @@ const NAV_ITEMS = [
   { label: "Timeline", href: "#timeline", id: "timeline" },
   // { label: "Prizes", href: "#prizes", id: "prizes" },
   { label: "Register", href: "#register", id: "register" },
-  { label: "Sponsors and Mentors", href: "#sponsors", id: "sponsors" },
+  { label: "Mentors and Judges", href: "#mentors", id: "sponsors" },
   { label: "FAQs", href: "#faq", id: "faq" },
 ];
 

@@ -156,7 +156,7 @@ function EventRow({ event }) {
 // ===== Timeline Section =====
 function TimelineSection() {
   return (
-    <div style={{
+    <div id="timeline" style={{
       position: "relative",
       width: "100%",
      
@@ -390,7 +390,7 @@ function RegistrationSection() {
         }
       `}</style>
 
-      <div className="reg-page">
+      <div className="reg-page" id="register">
         {/* Background */}
         <img
           src={decorStickers}
