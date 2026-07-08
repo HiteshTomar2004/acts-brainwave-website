@@ -65,7 +65,7 @@ export default function PersonCard({ person }) {
 
         {/* Role Badge */}
 
-        <div
+        {/* <div
           className="
             absolute
 
@@ -95,7 +95,7 @@ export default function PersonCard({ person }) {
           "
         >
           {person.role}
-        </div>
+        </div> */}
 
       </div>
 
