@@ -142,10 +142,10 @@ function EventRow({ event }) {
         transition: "opacity 0.5s ease",
         zIndex: 20,
       }}>
-        <p style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(1.2rem, 2.5vw, 3rem)", letterSpacing: "3px", color: "#ffffff", }}>
+        <p style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(1.2rem, 4.5vw, 4.5rem)", letterSpacing: "3px", color: "#ffffff", }}>
           {event.name}
         </p>
-        <p style={{ fontFamily: "'Share Tech Mono', monospace", fontSize:"clamp(0.8rem, 1.2vw, 3rem)", color: "#c8ff00", letterSpacing: "2px", margin: "2px 0 0" }}>
+        <p style={{ fontFamily: "'Share Tech Mono', monospace", fontSize:"clamp(0.8rem, 2.2vw, 3rem)", color: "#c8ff00", letterSpacing: "2px", margin: "2px 0 0" }}>
           {event.date}
         </p>
       </div>
@@ -160,7 +160,7 @@ function TimelineSection() {
       position: "relative",
       width: "100%",
      
-      minHeight: "100vh",
+      minHeight: "120vh",
       overflowX: "hidden",
       paddingBottom: "120px",
     }}>
