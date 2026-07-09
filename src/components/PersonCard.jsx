@@ -5,7 +5,7 @@ export default function PersonCard({ person }) {
     <div
       className="
         w-[180px]
-        h-[300px]
+        h-[310px]
 
         sm:w-[180px]
         sm:h-[285px]
