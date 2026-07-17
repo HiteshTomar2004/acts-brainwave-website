@@ -1107,7 +1107,7 @@ export default function Home() {
       {/* =============================================================== */}
       {/*                         SPONSORS                              */}
       {/* =============================================================== */}
-      <section id="sponsors" className="relative w-full py-10 md:py-24 overflow-hidden">
+      <section id="sponsors" className="relative w-full py-10 md:py-24 overflow-hidden hidden">
 
         <div className="w-full px-4 md:px-8 lg:px-12">
 
